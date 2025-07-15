@@ -8,7 +8,7 @@ import cors from "cors";
 
 dotenv.config();
 const app = express();
-app.use(cors({ origin: "https://conversa-xi.vercel.app", credentials: true }));
+app.use(cors({ origin: ["http://localhost:5173","https://conversa-xi.vercel.app/"], credentials: true }));
 app.use(express.json({ limit: '10mb' }))
 app.use(cookieParser());
 app.use("/api/auth", authRoutes);
