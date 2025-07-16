@@ -10,7 +10,7 @@ import { app ,server} from "./lib/socket.js";
 dotenv.config();
 
 const allowedOrigins = [
-  "https://conversa.up.railway.app",
+  "https://conversa-xi.vercel.app",
   "http://localhost:5173"
 ];
 
