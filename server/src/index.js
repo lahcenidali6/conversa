@@ -8,9 +8,19 @@ import cors from "cors";
 import { app ,server} from "./lib/socket.js";
 
 dotenv.config();
+
+const allowedOrigins = [
+  "https://conversa.up.railway.app",
+  "http://localhost:5173"
+];
+
 app.use(cors({
-  origin: (origin, callback) => {
-    callback(null, origin || true); 
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
   },
   credentials: true,
 }));
