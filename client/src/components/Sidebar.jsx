@@ -21,7 +21,7 @@ const {onlineUsers}  = useAuthStore()
         </div>
       </div>
       <div className="overflow-y-auto py-3">
-        {users.map((user) => (
+        {users?.map((user) => (
           <button
             key={user._id}
             onClick={() => setSelectedUser(user)}
